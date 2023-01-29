@@ -1,0 +1,108 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+}
+h1 {
+    position: absolute;
+    top: 15%;
+    color: rgb(171, 57, 57);
+    font-size: 3rem;
+}
+.board {
+    width: 400px;
+    height: 400px;
+    padding: 25px;
+    background-color: antiquewhite;
+    border-radius: 3rem;
+}
+
+body,
+.cards,
+.card,
+.view {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cards {
+    width: 100%;
+    height: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.card {
+
+    position: relative;
+
+    width: calc(100% / 4 - 10px);
+    height: calc(100% / 4 - 10px);
+
+    transform-style: preserve-3d;
+}
+
+.view {
+    user-select: none;
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: #ffff;
+    border-radius: 1rem;
+    box-shadow: 1px 3px rgba(0, 0, 0, 0.095);
+    backface-visibility: hidden;
+    transition: transform .3s linear;
+}
+
+.view-back img {
+    max-width: 40px;
+}
+
+.card .view-back {
+    /* display: none; */
+    transform: rotateY(-180deg);
+}
+
+.card.flip .view-back {
+    /* display: none; */
+    transform: rotateY(0);
+}
+
+.card.flip .view-front {
+    /* display: none; */
+    transform: rotateY(180deg);
+}
+
+.vibration {
+    animation: vibre .3s ease-in-out;
+}
+
+@keyframes vibre {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    20% {
+        transform: translateX(-10px)
+    }
+
+    40% {
+        transform: translateX(10px);
+    }
+
+    60% {
+        transform: translateX(-8px);
+    }
+
+    80% {
+        transform: translateX(8px);
+    }
+}
