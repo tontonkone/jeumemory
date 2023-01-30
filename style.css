@@ -7,9 +7,14 @@
 body {
     min-height: 100vh;
 }
-h1 {
+
+.top {
+    display: flex;
+    flex-direction: column;
     position: absolute;
-    top: 15%;
+    top: 5%;
+}
+h1 {
     color: rgb(171, 57, 57);
     font-size: 3rem;
 }
@@ -105,4 +110,22 @@ body,
     80% {
         transform: translateX(8px);
     }
+}
+
+.reset{
+    cursor: pointer;
+    padding: .5rem;
+    color: rgb(122, 74, 15);
+    font-size: medium;
+    background-color:transparent;
+    border-radius: 1rem;
+    margin: .3rem;
+}
+.score {
+    padding: .5rem;
+    color: rgb(249, 100, 14);
+    font-size: medium;
+    border: 1px solid rgb(249, 100, 14);
+    background-color: transparent;
+    border-radius: 1rem;
 }
